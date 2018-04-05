@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "747886515798",
+    "firebase_url": "https://fitnesspursuit-3e44f.firebaseio.com",
+    "project_id": "fitnesspursuit-3e44f",
+    "storage_bucket": "fitnesspursuit-3e44f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747886515798:android:5ba37c89e6868bc3",
+        "android_client_info": {
+          "package_name": "Fitness.Pursuit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747886515798-ahjnl2n01knktv8u1qe6aj127hl7vui3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Fitness.Pursuit",
+            "certificate_hash": "3b98dd55dbd129ec10e62b8695f30fef83cc6dbb"
+          }
+        },
+        {
+          "client_id": "747886515798-bqc6levi3sukujb1k8a6tdrhvssrd0tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL08cTqq_4BkGxAbjFmYM4VCkRHJD_QZ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747886515798-bqc6levi3sukujb1k8a6tdrhvssrd0tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747886515798:android:df45d7d04d42e0e7",
+        "android_client_info": {
+          "package_name": "pursuit.fitness.fitnesspursuit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747886515798-g11ap8sr4mhi8kap4m5acgdjj5umaius.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pursuit.fitness.fitnesspursuit",
+            "certificate_hash": "3b98dd55dbd129ec10e62b8695f30fef83cc6dbb"
+          }
+        },
+        {
+          "client_id": "747886515798-bqc6levi3sukujb1k8a6tdrhvssrd0tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL08cTqq_4BkGxAbjFmYM4VCkRHJD_QZ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747886515798-bqc6levi3sukujb1k8a6tdrhvssrd0tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
