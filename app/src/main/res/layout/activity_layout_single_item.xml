@@ -13,6 +13,10 @@
             android:layout_height="105dp"
             android:id="@+id/ivSchedule"
             android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="11dp"
             />
 
         <TextView
@@ -21,6 +25,7 @@
             android:id="@+id/tvSchedule"
             android:text="Timetable"
             android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
             android:textStyle="bold"
             android:layout_toRightOf="@+id/ivSchedule"
             android:textSize="24sp"
@@ -44,6 +49,7 @@
             android:text="Click here"
             android:textSize="12dp"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
             android:layout_below="@+id/tvDescription"
             android:layout_alignBottom="@+id/ivSchedule"
             />
