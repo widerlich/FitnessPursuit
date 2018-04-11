@@ -6,59 +6,45 @@ package pursuit.fitness.fitnesspursuit;
 
 public class Day {
 
-    private String name;
-    private String link;
-    private int imageResourceId;
+    private String name_day;
+    private String link_day;
 
 
-    public Day(String name, String link, int imageResourceId){
-        this.name = name;
-        this.link = link;
-        this.imageResourceId = imageResourceId;
+    public Day(String name, String link){
+        this.name_day = name;
+        this.link_day = link;
 
     }
 
     public static final Day[] days = {
 
             new Day("Monday",
-                    "Go for it !",
-                    R.drawable.monday),
+                    "Go for it !"),
 
             new Day("Tuesday",
-                    "Go for it !",
-                    R.drawable.tuesday),
+                    "Just do it !"),
 
             new Day("Wednesday",
-                    "Go for it !",
-                    R.drawable.wednesday),
+                    "Don't let your dream be dream !"),
 
             new Day("Thursday",
-                    "Go for it !",
-                    R.drawable.thursday),
+                    "Nothing is impossible !"),
 
             new Day("Friday",
-                    "Go for it !",
-                    R.drawable.friday),
+                    "You can do it !"),
 
             new Day("Saturday",
-                    "Go for it !",
-                    R.drawable.saturday),
+                    "Just do it !"),
 
             new Day("Sunday",
-                    "Go for it !",
-                    R.drawable.sunday),
+                    "Go for it !"),
 
     };
 
     public String getName() {
-        return name;
+        return name_day;
     }
-
-    public int getImageResourceId() {
-        return imageResourceId;
-    }
-
     public String getLink() {
-        return link;
+        return link_day;
     }
 }

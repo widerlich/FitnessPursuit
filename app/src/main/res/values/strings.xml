@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">FitnessPursuit</string>
 
+
     <string-array name="day">
         <item>Monday</item>
         <item>Tuesday</item>
@@ -28,5 +29,11 @@
     </string>
     <string name="title_activity_week">WeekActivity</string>
     <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="Home">Home</string>
+    <string name="Schedule">Schedule</string>
+    <string name="My_progress">My progress</string>
+    <string name="Friends">Friends</string>
+    <string name="Profile">Profile</string>
+    <string name="title_activity_day">DayActivity</string>
 
 </resources>
