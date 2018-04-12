@@ -29,7 +29,7 @@ abstract class BaseActivity extends AppCompatActivity {
     protected void
     showPopupMessage(String message) {
         Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
+        int duration = Toast.LENGTH_LONG;
         Toast toast = Toast.makeText(context, message, duration);
         toast.show();
 

@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class ScheduleActivity extends AppCompatActivity {
 
+    public static String USER = "0";
+
     private ListView listView;
     private Toolbar toolbar;
     FirebaseAuth auth = FirebaseAuth.getInstance();

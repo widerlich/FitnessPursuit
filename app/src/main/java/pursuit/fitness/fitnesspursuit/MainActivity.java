@@ -19,46 +19,29 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-
-    private final String TAG = "MainActivity";
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        checkUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         onClickSignIn();
     }
 
-    private void
-    showPopupMessage(String message) {
-        Log.e(TAG, message);
-
-
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, message, duration);
-        toast.show();
-
-        //SnackBar
-        //CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
-        //Snackbar.make(coordinatorLayout, message, Snackbar.LENGTH_INDEFINITE).show();
-    }
-
-
-
-    FirebaseAuth auth = FirebaseAuth.getInstance();
-    FirebaseUser user = auth.getCurrentUser();
 
     private static final int RC_SIGN_IN = 123;
 
     //private FirebaseAuth auth;
     public void onClickSignIn() {
-        Log.d(TAG, "onClickSignIn");
         if (user != null) {
-            showPopupMessage("already signed in, " + "displayName=" + user.getDisplayName()
-                    + ", " + "email="
-                    + user.getEmail() + ", " + "uuid=" + user.getUid());
+            showPopupMessage("You are signed in!");//, " + "displayName=" + user.getDisplayName()
+                    //+ ", " + "email="
+                    //+ user.getEmail() + ", " + "uuid=" + user.getUid());
         }
         else {
             List<AuthUI.IdpConfig> providers = Arrays.asList(
