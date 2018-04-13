@@ -36,4 +36,28 @@
     <string name="Profile">Profile</string>
     <string name="title_activity_day">DayActivity</string>
 
+    <string name="questionnaire_info_general">We need some more info to generate your training plan.</string>
+    <string name="questionnaire_data_safety">Don\'t worry, we will not sell this data or use it elsewhere. ;)</string>
+    <string name="questionnaire_age">Please pick your current age:</string>
+    <string name="questionnaire_frequency">Number of sessions per week:</string>
+    <string name="questionnaire_info_age">ⓘ  This will be used to calculate your target heart rate.</string>
+    <string name="questionnaire_info_frequency">ⓘ For beginners 2 to 3 times a week is a good start.</string>
+    <string name="questionnaire_program">Choose your main goal:</string>
+    <string name="questionnaire_info_goals">ⓘ More information about the program on selection.</string>
+    <string-array name="questionnaire_goals">
+        <item>Gain strength + muscle</item>
+        <item>Improve stamina</item>
+        <item>Do my own sport</item>
+        <item>Lose weight</item>
+        <item>Increase health</item>
+    </string-array>
+
+    <string-array name="questionnaire_toasts_goals">
+        <item>This program will focus on weightlifting and strength training.</item>item>
+        <item>In this regime we will focus on endurance exercises like running or cycling.</item>
+        <item>You will have plenty of time for doing your own sport with this selection and we'll spice it up with some strength and endurance exercises.</item>
+        <item>This is a mix of strength and endurance, focusing on weightloss.</item>
+        <item>BLABLABLA</item>
+    </string-array>
+
 </resources>

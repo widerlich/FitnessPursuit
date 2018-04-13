@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="pursuit.fitness.fitnesspursuit.QuestionnaireActivity">
+
+<android.support.constraint.Guideline
+    android:id="@+id/guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.05" />
+
+<android.support.constraint.Guideline
+    android:id="@+id/guideline1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.65" />
+
+<android.support.constraint.Guideline
+    android:id="@+id/guideline2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.05" />
+
+<android.support.constraint.Guideline
+    android:id="@+id/guideline3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.95" />
+
+<android.support.constraint.Guideline
+    android:id="@+id/guideline4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.25" />
+
+<TextView
+    android:id="@+id/questionnaire"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:text="Questionnaire"
+    android:textSize="45sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.504"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+<TextView
+    android:id="@+id/info_questionnaire"
+    android:layout_width="wrap_content"
+    android:layout_height="20dp"
+    android:layout_gravity="center"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="12dp"
+    android:text="@string/questionnaire_info_general"
+    android:textColor="@android:color/black"
+    android:textSize="16sp"
+    android:textStyle="italic"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/questionnaire" />
+
+<TextView
+    android:id="@+id/data_safety"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:layout_gravity="center"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="1dp"
+    android:text="@string/questionnaire_data_safety"
+    android:textColor="@android:color/black"
+    android:textSize="14sp"
+    android:textStyle="italic"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/info_questionnaire" />
+
+<TextView
+    android:id="@+id/age"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="20dp"
+    android:text="@string/questionnaire_age"
+    android:textColor="@android:color/black"
+    android:textSize="16sp"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/data_safety" />
+
+<NumberPicker
+    android:id="@+id/numberPickerAge"
+    android:layout_width="50sp"
+    android:layout_height="60sp"
+    android:layout_marginTop="5dp"
+    android:scaleX="1"
+    android:scaleY="1"
+    android:textSize="22dp"
+    app:layout_constraintBottom_toBottomOf="@+id/age"
+    app:layout_constraintStart_toEndOf="@+id/guideline1"
+    app:layout_constraintTop_toTopOf="@+id/age" />
+
+<TextView
+    android:id="@+id/info_age"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="12dp"
+    android:text="@string/questionnaire_info_age"
+    android:textColor="@android:color/black"
+    android:textSize="14sp"
+    android:textStyle="italic"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/numberPickerAge" />
+
+<TextView
+    android:id="@+id/frequency"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="60dp"
+    android:text="@string/questionnaire_frequency"
+    android:textColor="@android:color/black"
+    android:textSize="16sp"
+    app:layout_constraintStart_toEndOf="@+id/info_age"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/info_age" />
+
+<NumberPicker
+    android:id="@+id/numberPickerFrequency"
+    android:layout_width="50sp"
+    android:layout_height="60sp"
+    android:scaleX="1"
+    android:scaleY="1"
+    android:textSize="22dp"
+    app:layout_constraintBottom_toBottomOf="@+id/frequency"
+    app:layout_constraintStart_toEndOf="@+id/guideline1"
+    app:layout_constraintTop_toTopOf="@+id/frequency" />
+
+<TextView
+    android:id="@+id/info_frequency"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="12dp"
+    android:text="@string/questionnaire_info_frequency"
+    android:textColor="@android:color/black"
+    android:textSize="14sp"
+    android:textStyle="italic"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/numberPickerFrequency" />
+
+<TextView
+    android:id="@+id/goal"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="50dp"
+    android:text="@string/questionnaire_program"
+    android:textColor="@android:color/black"
+    android:textSize="16sp"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/info_frequency" />
+
+<Spinner
+    android:id="@+id/spinner_goal"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/goal" />
+
+<TextView
+    android:id="@+id/info_goal"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="12dp"
+    android:text="@string/questionnaire_info_goals"
+    android:textColor="@android:color/black"
+    android:textSize="14sp"
+    android:textStyle="italic"
+    app:layout_constraintStart_toStartOf="@+id/guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/spinner_goal" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>
