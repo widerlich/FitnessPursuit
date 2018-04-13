@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">FitnessPursuit</string>
 
-    <string-array name="Main">
+
+    <string-array name="day">
         <item>Monday</item>
         <item>Tuesday</item>
         <item>Wednesday</item>
@@ -11,15 +12,7 @@
         <item>Sunday</item>
     </string-array>
 
-    <string-array name="Description">
-        <item>Description 1</item>
-        <item>Description 2</item>
-        <item>Description 3</item>
-        <item>Description 4</item>
-        <item>Description 5</item>
-        <item>Description 6</item>
-        <item>Description 7</item>
-    </string-array>
+
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -35,6 +28,13 @@
         completions."
     </string>
     <string name="title_activity_week">WeekActivity</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="Home">Home</string>
+    <string name="Schedule">Schedule</string>
+    <string name="My_progress">My progress</string>
+    <string name="Friends">Friends</string>
+    <string name="Profile">Profile</string>
+    <string name="title_activity_day">DayActivity</string>
 
     <string name="questionnaire_info_general">We need some more info to generate your training plan.</string>
     <string name="questionnaire_data_safety">Don\'t worry, we will not sell this data or use it elsewhere. ;)</string>
