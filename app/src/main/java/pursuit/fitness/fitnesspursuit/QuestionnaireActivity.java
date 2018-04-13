@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
         import android.widget.NumberPicker;
         import android.widget.Toast;
 
-public class QuestionnaireActivity extends AppCompatActivity {
+public class QuestionnaireActivity extends BaseActivity {
 
     NumberPicker pickerAge;
     NumberPicker pickerFrequency;
@@ -22,6 +22,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        checkUser();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire);
 
@@ -62,16 +63,9 @@ public class QuestionnaireActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedGoal = (String) parent.getItemAtPosition(position);
-
-                //switch (dayOfWeekArg) {
-                //    case "Monday":
-                //        typeOfDay = "Start of work week";
-                //        break;
-
-                if(selectedGoal == goals[0])
-
-                Toast.makeText
-                        (getApplicationContext(), "Selected : " + selectedGoal, Toast.LENGTH_LONG)
+                for (int i = 0; i<goals.length; i++)
+                    if(selectedGoal==goals[0])
+                        Toast.makeText(getApplicationContext(), tGoals[i], Toast.LENGTH_LONG)
                         .show();
             }
 

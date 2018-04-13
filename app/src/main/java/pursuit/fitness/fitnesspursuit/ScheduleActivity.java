@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class ScheduleActivity extends AppCompatActivity {
+public class ScheduleActivity extends BaseActivity {
 
+    public static String USER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        checkUser();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);

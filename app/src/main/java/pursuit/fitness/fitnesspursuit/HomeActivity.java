@@ -12,11 +12,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends BaseActivity {
 
-    FirebaseAuth auth = FirebaseAuth.getInstance();
-    FirebaseUser user = auth.getCurrentUser();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        checkUser();
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
@@ -26,8 +24,8 @@ public class HomeActivity extends BaseActivity {
         imgbtn_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentname = new Intent(HomeActivity.this, ScheduleActivity.class);
-                startActivity(intentname);
+                Intent intentSchedule = new Intent(HomeActivity.this, ScheduleActivity.class);
+                startActivity(intentSchedule);
             }
         });
 
@@ -35,8 +33,8 @@ public class HomeActivity extends BaseActivity {
         imgbtn_progress.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intentname = new Intent(HomeActivity.this, ProgressActivity.class);
-                startActivity(intentname);
+                Intent intentProgress = new Intent(HomeActivity.this, ProgressActivity.class);
+                startActivity(intentProgress);
             }
         });
 
@@ -54,8 +52,8 @@ public class HomeActivity extends BaseActivity {
         imgbtn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentname = new Intent(HomeActivity.this, ProfileActivity.class);
-                startActivity(intentname);
+                Intent intentProfile = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intentProfile);
             }
         });
 

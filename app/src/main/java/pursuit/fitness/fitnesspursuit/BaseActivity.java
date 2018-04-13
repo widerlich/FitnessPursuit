@@ -1,7 +1,11 @@
 package pursuit.fitness.fitnesspursuit;
 
+import android.app.Activity;
+import android.view.View;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
@@ -16,25 +20,38 @@ abstract class BaseActivity extends AppCompatActivity {
     protected void checkUser() {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-        if (user==null)
-            showPopupMessage("Please log in or create a profile.");
-        else{
+        if (user!=null) {
             String userid = user.getUid();
             Intent proceedToSchedule = new Intent(this, ScheduleActivity.class);
             proceedToSchedule.putExtra(ScheduleActivity.USER, userid);
             startActivity(proceedToSchedule);
         }
+        else{
+            showPopupMessage("Please log in or create a profile.");
+        }
     }
-
+    //Toast
     protected void
     showPopupMessage(String message) {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_LONG;
         Toast toast = Toast.makeText(context, message, duration);
         toast.show();
-
-        //SnackBar
-        //CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
-        //Snackbar.make(coordinatorLayout, message, Snackbar.LENGTH_INDEFINITE).show();
     }
+
+    //Snackbar
+     /*   protected void
+        showPopupMessage(String message, View v, String actionname, Activity activity) {
+            Context context = getApplicationContext();
+            int duration = Toast.LENGTH_LONG;
+            Snackbar.make(v, message, Snackbar.LENGTH_LONG).
+                    .setAction(actionname, new View.onClickListener() {
+            @Override public void onClick(View v){
+                Intent move = new Intent(this, activity);
+                startActivity(move);
+            };//.show();
+            }
+
+            }*/
+
 }

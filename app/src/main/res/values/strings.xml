@@ -30,6 +30,8 @@
     </string>
     <string name="signin_successful">You are signed in!"</string>
     <string name="signin_cancelled">You cancelled your sign in.</string>
+    <string name="no_internet_connection">You don\'t have any connection to the Internet.</string>
+    <string name="signin_error">"Sign-in error: </string>
 
 
     <string name="title_activity_week">WeekActivity</string>
@@ -38,8 +40,15 @@
     <string name="Schedule">Schedule</string>
     <string name="My_progress">My progress</string>
     <string name="Friends">Friends</string>
-    <string name="Profile">Profile</string>
     <string name="title_activity_day">DayActivity</string>
+
+    <string name="Profile">Profile</string>
+    <string-array name="languages">
+        <item>English</item>
+        <item>French</item>
+        <item>German</item>
+    </string-array>
+
 
     <string name="questionnaire_info_general">We need some more info to generate your training plan.</string>
     <string name="questionnaire_data_safety">Don\'t worry, we will not sell this data or use it elsewhere. ;)</string>

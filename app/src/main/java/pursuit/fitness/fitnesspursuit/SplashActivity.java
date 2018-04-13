@@ -18,8 +18,6 @@ public class SplashActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        checkUser();
-
         //tv = (TextView) findViewById(R.id.welcome);
         iv = (ImageView) findViewById(R.id.logotext);
         Animation splash = AnimationUtils.loadAnimation(this, R.anim.transitionsplash);

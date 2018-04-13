@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        checkUser();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         checkUser();
@@ -35,13 +36,12 @@ public class MainActivity extends BaseActivity {
         onClickSignIn();
     }
 
-
     private static final int RC_SIGN_IN = 123;
 
     //private FirebaseAuth auth;
     public void onClickSignIn() {
         if (user != null) {
-            showPopupMessage("You are signed in!");//, " + "displayName=" + user.getDisplayName()
+            showPopupMessage("@string/signin_successful");//, " + "displayName=" + user.getDisplayName()
                     //+ ", " + "email="
                     //+ user.getEmail() + ", " + "uuid=" + user.getUid());
         }
@@ -62,20 +62,21 @@ public class MainActivity extends BaseActivity {
             IdpResponse response = IdpResponse.fromResultIntent(data);
             if (resultCode == RESULT_OK) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                showPopupMessage("sign in successful, " + "displayName=" + user.getDisplayName() + ", " +
-                        "email=" + user.getEmail() + ", " + "uuid=" + user.getUid());
+                showPopupMessage("@string/signin_successful");
+                        //+ "displayName=" + user.getDisplayName() + ", " +
+                        //"email=" + user.getEmail() + ", " + "uuid=" + user.getUid());
             }
             else {
                 if (response == null) {
-                    showPopupMessage("sign in cancelled");
+                    showPopupMessage("@string/signin_cancelled");
                     return;
                 }
                 if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    showPopupMessage("no internet connection");
+                    showPopupMessage("@string/no_internet_connection");
                     return;
                 }
-// handle all other errors
-                showPopupMessage("Sign - in error: " + response.getError());
+                // handle all other errors
+                showPopupMessage("@string/sign_in_error" + response.getError());
             }
         }
     }
