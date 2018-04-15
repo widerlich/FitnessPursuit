@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.FileNotFoundException;
 
 public class ProfileActivity extends BaseActivity {
@@ -23,7 +25,6 @@ public class ProfileActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        checkUser();
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_profile);
@@ -39,6 +40,17 @@ public class ProfileActivity extends BaseActivity {
                         Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
+
+            }
+        });
+
+        Button btn_logout = (Button) findViewById(R.id.btn_logout);
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i = new Intent(ProfileActivity.this, MainActivity.class);
 
             }
         });

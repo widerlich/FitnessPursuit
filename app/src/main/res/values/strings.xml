@@ -28,7 +28,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="sign_in_successful">You are signed in!"</string>
+
     <string name="sign_in_cancelled">You cancelled your sign in.</string>
     <string name="no_internet_connection">You don\'t have any connection to the Internet.</string>
     <string name="signin_error">"Sign-in error: </string>
@@ -38,7 +38,7 @@
     <string name="title_activity_schedule">ScheduleActivity</string>
     <string name="Home">Home</string>
     <string name="Schedule">Schedule</string>
-    <string name="My_progress">My progress</string>
+    <string name="progress">Progress</string>
     <string name="title_activity_day">DayActivity</string>
     <string name="Food">Food Log</string>
 
@@ -77,7 +77,7 @@
         <item>This is a mix of strength and endurance, focusing on weightloss.</item>
     </string-array>
     <string name="title_activity_questionnaire2">QuestionnaireActivity2</string>
-    <string name="food_no_input">Nothing has been inputted</string>
+    <string name="food_no_input">Nothing has been inputted yet.</string>
     <string name="food_enter_information">Please enter all necessary information!</string>
     <string name="food_today">Today:</string>
     <string name="food_calorie_graph">Calorie intake over the past 7 days</string>
@@ -85,5 +85,16 @@
     <string name="food_carbohydrate_graph">Carbohydrate intake over the past 7 days</string>
     <string name="food_fats_graph">Fat intake over the past 7 days</string>
     <string name="food_no_data_graph">There is no data to be displayed</string>
+    <string name="successful_sign_in">You are signed in!</string>
+    <string name="splash_intro">to your personalized fitness experience!</string>
+    <string name="food_meal">Meal</string>
+    <string name="food_submit">Submit</string>
+    <string name="food_meal_name">Meal Name</string>
+    <string name="food_fats">Fats (g)</string>
+    <string name="food_carbohydrates">Carbohydrates (g)</string>
+    <string name="food_protein">Protein (g)</string>
+    <string name="food_calories">Calories (cal)</string>
+    <string name="profile_name">Name</string>
+    <string name="profile_language">Language</string>
 
 </resources>

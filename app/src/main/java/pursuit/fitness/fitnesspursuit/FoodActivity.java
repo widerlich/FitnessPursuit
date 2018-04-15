@@ -13,16 +13,17 @@ public class FoodActivity extends BaseActivity {
 
     Button submitButton;
     Database db;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
         submitButton = (Button)findViewById(R.id.submit_Button);
         submitButton.setOnClickListener(insertFood);
         db =  new Database(this);
-
     }
+
+
     private View.OnClickListener insertFood = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -35,7 +36,6 @@ public class FoodActivity extends BaseActivity {
                 Toast.makeText(FoodActivity.this, R.string.food_enter_information, Toast.LENGTH_SHORT).show();
             }
             else {
-
                 String mealName = meal_Name.getText().toString();
                 float calories = Float.parseFloat(Calorie_count.getText().toString());
                 float protein = Float.parseFloat(Protein_Count.getText().toString());

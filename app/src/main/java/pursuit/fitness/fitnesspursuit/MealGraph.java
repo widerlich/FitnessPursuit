@@ -6,22 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
-
 import java.util.ArrayList;
 import java.util.Collections;
-
-
 
 public class MealGraph extends AppCompatActivity {
     private Database db;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_graph);
 
@@ -68,10 +63,12 @@ public class MealGraph extends AppCompatActivity {
             Toast.makeText(this, R.string.food_no_data_graph, Toast.LENGTH_SHORT).show();
     }
 
+
     protected double getMax(ArrayList<Double> nutrition){
         double theMax= Collections.max(nutrition);
         return theMax;
     }
+
 
     protected double getMin(ArrayList<Double>nutrition){
         double theMin = Collections.min(nutrition);
@@ -90,6 +87,7 @@ public class MealGraph extends AppCompatActivity {
         };
         return data;
     }
+
 
     private String[] getDates(CalendarDay today) {
         String date1 = "", date2 = "", date3 = "", date4 = "", date5 = "", date6 = "", date7 = "";
@@ -295,10 +293,8 @@ public class MealGraph extends AppCompatActivity {
             }
 
         }
-
         String[] graphDates = {date7, date6, date5, date4, date3, date2, date1};
         return graphDates;
-
     }
 
 
@@ -357,5 +353,3 @@ public class MealGraph extends AppCompatActivity {
         return output;
     }
 }
-
-

@@ -2,11 +2,9 @@ package pursuit.fitness.fitnesspursuit;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
+import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.ArrayAdapter;
@@ -16,6 +14,8 @@ import android.widget.TextView;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class CheckFoodActivity extends AppCompatActivity {
@@ -28,7 +28,6 @@ public class CheckFoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_food);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
@@ -46,27 +45,27 @@ public class CheckFoodActivity extends AppCompatActivity {
         list.setAdapter(listAdapter);
         ArrayList<Double>FoodTotal = db.getTotal(selectedDate);
         totalFood.setText("Food Log Overview"+
-                "\n Total calorie intake:\t"+FoodTotal.get(0)+
-                "\n Total protein intake:\t"+ FoodTotal.get(1)+
-                "\n Total carbohydrate intake:\t"+ FoodTotal.get(2)+
-                "\n Total fat intake:\t\t"+ FoodTotal.get(3));
+                "\n Total calorie intake (cal):\t"+FoodTotal.get(0)+
+                "\n Total protein intake (g):\t"+ FoodTotal.get(1)+
+                "\n Total carbohydrate intake (g):\t"+ FoodTotal.get(2)+
+                "\n Total fat intake (g):\t\t"+ FoodTotal.get(3));
 
-        //if(language == "Deutsch")
+       /* //if(language == "Deutsch")
         totalFood.setText("Tagesübersicht"+
-                "\n Gesamtkalorien:\t"+FoodTotal.get(0)+
-                "\n Gesamtprotein:\t"+ FoodTotal.get(1)+
-                "\n Gesamtkohlenhydrate:\t"+ FoodTotal.get(2)+
-                "\n Gesamtfett:\t\t"+ FoodTotal.get(3));
+                "\n Gesamtkalorien (cal):\t"+FoodTotal.get(0)+
+                "\n Gesamtprotein (g):\t"+ FoodTotal.get(1)+
+                "\n Gesamtkohlenhydrate (g):\t"+ FoodTotal.get(2)+
+                "\n Gesamtfett (g):\t\t"+ FoodTotal.get(3));
 
         //if(language == "Français")
         totalFood.setText("Vue d'ensemble"+
-                "\n Apport calorique:\t"+FoodTotal.get(0)+
-                "\n Protèines totales:\t"+ FoodTotal.get(1)+
-                "\n Carbohydrates totales:\t"+ FoodTotal.get(2)+
-                "\n Graisse totale:\t"+ FoodTotal.get(3));
+                "\n Apport calorique (cal):\t"+FoodTotal.get(0)+
+                "\n Protèines totales (g):\t"+ FoodTotal.get(1)+
+                "\n Carbohydrates totales (g):\t"+ FoodTotal.get(2)+
+                "\n Graisse totale (g):\t"+ FoodTotal.get(3));*/
 
 
-        int newDay= todayDate.getDay()+1,
+        int newDay= todayDate.getDay(),
                 newMonth= todayDate.getMonth(),
                 newYear= todayDate.getYear();
         CalendarDay newCalendarDay = new CalendarDay(newYear,newMonth,newDay);

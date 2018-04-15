@@ -33,15 +33,16 @@ public class CalendarActivity extends AppCompatActivity {
         proTotal.setOnClickListener(launch_graphPro);
         calTotal.setOnClickListener(launch_graphCal);
         final MaterialCalendarView calendarView = (MaterialCalendarView) findViewById(R.id.calendarView);
+
         calendarView.state().edit()
                 .setFirstDayOfWeek(android.icu.util.Calendar.MONDAY)
-                .setMinimumDate(CalendarDay.from(2018, 4, 1))
-                .setMaximumDate(CalendarDay.from(2020, 12, 31))
+                .setMinimumDate(CalendarDay.from(2018, 3, 0))
+                .setMaximumDate(CalendarDay.from(2020, 11, 30))
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
+
         calendarView.setOnDateChangedListener(new OnDateSelectedListener() {
-            @Override
-            public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+            @Override public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
                 // DateFormat dateFormat = SimpleDateFormat.getDateInstance();
                 //Toast.makeText(calendarView.this," "+dateFormat.format(date.getDate()),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(CalendarActivity.this, CheckFoodActivity.class);
@@ -98,7 +99,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         if (requestCode == 1) {
             if (resultCode == Activity.RESULT_OK) {
-                Toast.makeText(this, "@string/meal_added", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.meal_added), Toast.LENGTH_LONG).show();
             }
         }
     }

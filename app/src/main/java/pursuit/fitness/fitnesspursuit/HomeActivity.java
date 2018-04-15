@@ -2,19 +2,14 @@ package pursuit.fitness.fitnesspursuit;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        checkUser();
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
@@ -38,11 +33,11 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
-        ImageButton imgbtn_friends = (ImageButton) findViewById(R.id.imgbtn_friends);
+        ImageButton imgbtn_friends = (ImageButton) findViewById(R.id.imgbtn_food);
         imgbtn_friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentname = new Intent(HomeActivity.this, FriendsActivity.class);
+                Intent intentname = new Intent(HomeActivity.this, CalendarActivity.class);
                 startActivity(intentname);
             }
         });

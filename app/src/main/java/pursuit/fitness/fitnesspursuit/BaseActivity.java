@@ -1,7 +1,6 @@
 package pursuit.fitness.fitnesspursuit;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -12,17 +11,20 @@ abstract class BaseActivity extends AppCompatActivity {
     FirebaseUser user;
     FirebaseAuth auth;
 
-    protected void checkUser() {
+    protected FirebaseUser checkUser() {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         if (user!=null) {
             String userid = user.getUid();
-            Intent proceedToSchedule = new Intent(this, ScheduleActivity.class);
-            proceedToSchedule.putExtra(ScheduleActivity.USER, userid);
-            startActivity(proceedToSchedule);
+            //Intent proceedToSchedule = new Intent(this, ScheduleActivity.class);
+            //proceedToSchedule.putExtra(ScheduleActivity.USER, userid);
+            //startActivity(proceedToSchedule);
+
+            return user;
         }
         else{
-            showPopupMessage("@string/toast_not_logged_in");
+            showPopupMessage(getString(R.string.toast_not_logged_in));
+            return null;
         }
     }
     //Toast

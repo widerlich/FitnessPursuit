@@ -15,12 +15,17 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
+    Database db;
+    FirebaseUser user;
+    String userid = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        checkUser();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
-        checkUser();
+        user = checkUser();
+        if(user!=null)
+            userid = user.getUid();
     }
 
     @Override
@@ -30,13 +35,27 @@ public class MainActivity extends BaseActivity {
     }
 
     private static final int RC_SIGN_IN = 123;
+    Intent intent1;
+    Intent intent2;
+    String [] array = new String [1];
+
 
     //private FirebaseAuth auth;
     public void onClickSignIn() {
         if (user != null) {
-            showPopupMessage("@string/sign_in_successful");//, " + "displayName=" + user.getDisplayName()
-                    //+ ", " + "email="
-                    //+ user.getEmail() + ", " + "uuid=" + user.getUid());
+            showPopupMessage(getString(R.string.successful_sign_in)+" onClick");
+            intent1 = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent1);
+
+         /*   try {
+                Cursor c = db.rawQuery("SELECT username FROM users WHERE id_user="+userid, array);
+
+                if(c.getCount()>0)
+                    intent1 = new Intent(MainActivity.this, HomeActivity.class);
+                else
+                    intent2 = new Intent(MainActivity.this, QuestionnaireActivity2.class);
+            }catch(Exception e){}
+         */
         }
         else {
             List<AuthUI.IdpConfig> providers = Arrays.asList(
@@ -55,21 +74,23 @@ public class MainActivity extends BaseActivity {
             IdpResponse response = IdpResponse.fromResultIntent(data);
             if (resultCode == RESULT_OK) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                showPopupMessage("@string/signin_successful");
+                showPopupMessage(getString(R.string.successful_sign_in));
+                intent1 = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent1);
                         //+ "displayName=" + user.getDisplayName() + ", " +
                         //"email=" + user.getEmail() + ", " + "uuid=" + user.getUid());
             }
             else {
                 if (response == null) {
-                    showPopupMessage("@string/signin_cancelled");
+                    showPopupMessage(getString(R.string.sign_in_cancelled));
                     return;
                 }
                 if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    showPopupMessage("@string/no_internet_connection");
+                    showPopupMessage(getString(R.string.no_internet_connection));
                     return;
                 }
                 // handle all other errors
-                showPopupMessage("@string/sign_in_error" + response.getError());
+                showPopupMessage(getString(R.string.signin_error) + response.getError());
             }
         }
     }

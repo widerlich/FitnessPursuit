@@ -41,7 +41,9 @@ public class Database {
         if (user!=null) {
             userid = user.getUid();
         }
-        else{}
+        else{
+
+        }
     }
 
     public void execSQL(String s) {
