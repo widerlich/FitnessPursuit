@@ -29,6 +29,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation "com.android.support:support-compat:26.1.0"
     compile 'com.firebaseui:firebase-ui-auth:3.2.2'
+    compile 'com.prolificinteractive:material-calendarview:1.4.3'
+    compile 'com.jjoe64:graphview:4.2.1'
 }
 
 

@@ -36,7 +36,7 @@
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_friends"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:srcCompat="?android:attr/actionModeCopyDrawable" />
+        app:srcCompat="@drawable/schedule" />
 
     <ImageButton
         android:id="@+id/imgbtn_progress"
@@ -46,17 +46,17 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_profile"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
-        app:srcCompat="?android:attr/actionModeFindDrawable" />
+        app:srcCompat="@drawable/progress" />
 
     <ImageButton
-        android:id="@+id/imgbtn_friends"
+        android:id="@+id/imgbtn_food"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:srcCompat="?android:attr/fingerprintAuthDrawable" />
+        app:srcCompat="@drawable/food" />
 
     <ImageButton
         android:id="@+id/imgbtn_profile"
@@ -66,7 +66,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
-        app:srcCompat="?android:attr/alertDialogIcon" />
+        app:srcCompat="@drawable/profile" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline11"
@@ -127,20 +127,20 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/txt_friends"
+        android:id="@+id/txt_food"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="@string/Friends"
+        android:text="@string/Food"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imgbtn_friends"
-        app:layout_constraintEnd_toEndOf="@+id/imgbtn_friends"
+        app:layout_constraintBottom_toTopOf="@+id/imgbtn_food"
+        app:layout_constraintEnd_toEndOf="@+id/imgbtn_food"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imgbtn_friends" />
+        app:layout_constraintStart_toStartOf="@+id/imgbtn_food" />
 
     <TextView
         android:id="@+id/txt_profile"

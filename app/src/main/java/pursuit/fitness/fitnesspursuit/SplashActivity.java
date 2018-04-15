@@ -2,7 +2,6 @@ package pursuit.fitness.fitnesspursuit;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -28,7 +27,7 @@ public class SplashActivity extends BaseActivity {
         Thread timer = new Thread() {
             public void run() {
                 try {
-                    sleep(10000);
+                    sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

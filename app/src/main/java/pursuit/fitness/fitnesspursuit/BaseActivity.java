@@ -1,13 +1,8 @@
 package pursuit.fitness.fitnesspursuit;
 
-import android.app.Activity;
-import android.view.View;
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +22,7 @@ abstract class BaseActivity extends AppCompatActivity {
             startActivity(proceedToSchedule);
         }
         else{
-            showPopupMessage("Please log in or create a profile.");
+            showPopupMessage("@string/toast_not_logged_in");
         }
     }
     //Toast

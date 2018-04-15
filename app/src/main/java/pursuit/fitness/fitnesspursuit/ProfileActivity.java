@@ -2,21 +2,18 @@ package pursuit.fitness.fitnesspursuit;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
-import android.provider.MediaStore;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.io.FileNotFoundException;
 
@@ -52,6 +49,19 @@ public class ProfileActivity extends BaseActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLang.setAdapter(adapter);
         spinnerLang.setSelection(0, false);
+
+        spinnerLang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedLang = (String) parent.getItemAtPosition(position);
+                //Set Language preference in DATABASE!
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
