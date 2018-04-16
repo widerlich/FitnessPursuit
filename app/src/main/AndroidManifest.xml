@@ -9,43 +9,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScheduleActivity"
+        <activity
+            android:name=".ScheduleActivity"
             android:label="@string/title_activity_schedule">
             <intent-filter>
                 <action android:name="android.intent.action.SCHEDULE" />
             </intent-filter>
         </activity>
-
-    <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
 
         <!-- <activity android:name=".ScheduleActivity" /> -->
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".QuestionnaireActivity" />
+
         <activity android:name=".ProgressActivity" />
         <activity android:name=".FriendsActivity" />
         <activity
             android:name=".DayActivity"
             android:label="@string/title_activity_day" />
         <activity android:name=".FoodActivity" />
-        <activity
-            android:name=".QuestionnaireActivity2"
-            android:label="@string/title_activity_questionnaire2" />
+
         <activity android:name=".CheckFoodActivity" />
         <activity android:name=".MealGraph" />
-        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".CalendarActivity" />
+        <activity
+            android:name=".QuestionnaireFabActivity"
+            android:label="@string/title_activity_questionnaire_fab"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

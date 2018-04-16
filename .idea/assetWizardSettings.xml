@@ -95,7 +95,7 @@
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="3f51b5" />
                                       <entry key="backgroundLayerName" value="ic_profile" />
-                                      <entry key="foregroundImage" value="D:\FitnessPursuit_launcher_icon.png" />
+                                      <entry key="foregroundImage" value="C:\Users\Habine\AndroidStudioProjects\FitnessPursuit\app\src\main\res\drawable\fitnesspursuit_launcher_icon.png" />
                                       <entry key="legacyIconShape" value="CIRCLE" />
                                       <entry key="webIconShape" value="CIRCLE" />
                                     </map>
@@ -103,11 +103,6 @@
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

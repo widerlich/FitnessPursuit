@@ -96,5 +96,6 @@
     <string name="food_calories">Calories (cal)</string>
     <string name="profile_name">Name</string>
     <string name="profile_language">Language</string>
+    <string name="title_activity_questionnaire_fab">Questionnaire</string>
 
 </resources>
