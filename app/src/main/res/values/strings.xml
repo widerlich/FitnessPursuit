@@ -97,5 +97,8 @@
     <string name="profile_name">Name</string>
     <string name="profile_language">Language</string>
     <string name="title_activity_questionnaire_fab">Questionnaire</string>
+    <string name="questionnaire_nameinput">Name</string>
+    <string name="questionnaire_name">Tell us your name:</string>
+    <string name="questionnaire_preferred_language">Preferred language:</string>
 
 </resources>

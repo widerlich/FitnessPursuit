@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 public class SplashActivity extends BaseActivity {
 
-    private TextView tv;
+    private TextView tv1;
+    private TextView tv2;
     private ImageView iv;
 
     @Override
@@ -17,17 +18,19 @@ public class SplashActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        //tv = (TextView) findViewById(R.id.welcome);
+        tv1 = (TextView) findViewById(R.id.welcome);
+        tv2 = (TextView) findViewById(R.id.intro);
         iv = (ImageView) findViewById(R.id.logotext);
         Animation splash = AnimationUtils.loadAnimation(this, R.anim.transitionsplash);
-        //tv.startAnimation(splash);
+        tv1.startAnimation(splash);
+        tv2.startAnimation(splash);
         iv.startAnimation(splash);
 
         final Intent callMain = new Intent(this, QuestionnaireFabActivity.class);
         Thread timer = new Thread() {
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(2500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

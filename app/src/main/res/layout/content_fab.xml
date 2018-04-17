@@ -48,28 +48,6 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.95" />
 
-                <android.support.constraint.Guideline
-                    android:id="@+id/guideline4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.25" />
-
-
-                <TextView
-                    android:id="@+id/questionnaire"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Questionnaire"
-                    android:textSize="45sp"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.504"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline" />
-
 
                 <TextView
                     android:id="@+id/nametxt"
@@ -79,7 +57,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="8dp"
-                    android:text="Tell us your name:"
+                    android:text="@string/questionnaire_name"
+                    android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/nameInput"
@@ -88,25 +67,26 @@
 
                 <EditText
                     android:id="@+id/nameInput"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="160dp"
+                    android:layout_height="44dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
                     android:ems="10"
-                    android:hint="Name"
+                    android:hint="@string/questionnaire_nameinput"
                     android:inputType="textPersonName"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintEnd_toEndOf="@+id/languagespin"
                     app:layout_constraintStart_toEndOf="@+id/nametxt"
-                    app:layout_constraintTop_toTopOf="@+id/guideline4" />
+                    app:layout_constraintTop_toTopOf="@+id/guideline" />
 
                 <TextView
                     android:id="@+id/languagetxt"
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="25dp"
-                    android:text="Preferred language:"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/questionnaire_preferred_language"
+                    android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -114,11 +94,12 @@
 
                 <Spinner
                     android:id="@+id/languagespin"
-                    android:layout_width="200dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="10dp"
                     app:layout_constraintBottom_toBottomOf="@+id/languagetxt"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toEndOf="@+id/languagetxt"
                     app:layout_constraintTop_toTopOf="@+id/languagetxt" />
 
@@ -127,11 +108,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="45dp"
                     android:text="@string/questionnaire_age"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/languagespin" />
 
@@ -139,25 +120,28 @@
                     android:id="@+id/numberPickerAge"
                     android:layout_width="50sp"
                     android:layout_height="60sp"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="5dp"
                     android:scaleX="1"
                     android:scaleY="1"
                     android:textSize="22dp"
                     app:layout_constraintBottom_toBottomOf="@+id/age"
                     app:layout_constraintStart_toEndOf="@+id/guideline1"
-                    app:layout_constraintTop_toTopOf="@+id/age" />
+                    app:layout_constraintTop_toTopOf="@+id/age"
+                    app:layout_constraintVertical_bias="0.409" />
 
                 <TextView
                     android:id="@+id/info_age"
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/questionnaire_info_age"
                     android:textColor="@android:color/black"
                     android:textSize="14sp"
                     android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/numberPickerAge" />
 
@@ -171,6 +155,7 @@
                     android:text="@string/questionnaire_frequency"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/info_age"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/info_age" />
@@ -179,6 +164,7 @@
                     android:id="@+id/numberPickerFrequency"
                     android:layout_width="50sp"
                     android:layout_height="60sp"
+                    android:layout_marginStart="24dp"
                     android:scaleX="1"
                     android:scaleY="1"
                     android:textSize="22dp"
@@ -190,13 +176,14 @@
                     android:id="@+id/info_frequency"
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/questionnaire_info_frequency"
                     android:textColor="@android:color/black"
                     android:textSize="14sp"
                     android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/numberPickerFrequency" />
 
@@ -205,10 +192,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginTop="40dp"
                     android:text="@string/questionnaire_program"
                     android:textColor="@android:color/black"
+                    android:textStyle="bold"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/info_frequency" />
