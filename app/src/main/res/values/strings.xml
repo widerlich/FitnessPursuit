@@ -95,12 +95,13 @@
     <string name="cal_btn">Cal</string>
     <string name="welcome_splash">Welcome</string>
     <string name="your_progress_photos">Your Progress Photos</string>
-    <string name="take_photo">Take Photo</string>
     <string name="user_deleted">User account deleted.</string>
     <string name="sign_out_successful">Successful sign-out.</string>
     <string name="profile">Profile</string>
     <string name="change_profile_picture">Change profile picture</string>
     <string name="log_out_btn">Log out</string>
     <string name="save_btn">Save</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="progress_menubar">Pictures of your progress</string>
 
 </resources>

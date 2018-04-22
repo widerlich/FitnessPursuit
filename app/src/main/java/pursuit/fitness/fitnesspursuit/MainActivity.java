@@ -41,6 +41,7 @@ public class MainActivity extends BaseActivity {
 
     //private FirebaseAuth auth;
     public void onClickSignIn() {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         if (user != null) {
             showPopupMessage(getString(R.string.successful_sign_in));
             intent1 = new Intent(MainActivity.this, HomeActivity.class);
@@ -58,11 +59,14 @@ public class MainActivity extends BaseActivity {
         }
         else {
             List<AuthUI.IdpConfig> providers = Arrays.asList(
+                    new AuthUI.IdpConfig.PhoneBuilder().build(),
                     new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
-                    new AuthUI.IdpConfig.GoogleBuilder().build());
+                    new AuthUI.IdpConfig.GoogleBuilder().build()
+
+            );
             // Create and launch sign -in intent
             startActivityForResult(AuthUI       .getInstance().createSignInIntentBuilder()
-                                                .setAvailableProviders(providers).build(), RC_SIGN_IN
+                                                .setAvailableProviders(providers).setLogo(R.drawable.logo_text_transparent1).build(), RC_SIGN_IN
             );
         }
     }

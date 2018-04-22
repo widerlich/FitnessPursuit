@@ -3,8 +3,9 @@
     package="pursuit.fitness.fitnesspursuit">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.hardware.camera2.full" />
+    <uses-permission android:name="android.hardware.camera2.full" /><!--></!-->
 
     <application
         android:allowBackup="true"
@@ -39,7 +40,6 @@
         <!-- <activity android:name=".ScheduleActivity" /> -->
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ProgressActivity" />
-        <activity android:name=".FriendsActivity" />
         <activity
             android:name=".DayActivity"
             android:label="@string/title_activity_day" />

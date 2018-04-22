@@ -5,6 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
     <color name="whiteSplash">#E8EAF6</color>
+    <color name="fui_bgEmail">#9FA8DA</color>
+    <color name="fui_bgPhone">#7986CB</color>
+
 </resources>
 
 

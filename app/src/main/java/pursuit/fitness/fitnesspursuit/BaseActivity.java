@@ -39,6 +39,7 @@ abstract class BaseActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void deleteUser() {
         AuthUI.getInstance()
                 .delete(this)

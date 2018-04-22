@@ -1,7 +1,9 @@
 package pursuit.fitness.fitnesspursuit;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -29,7 +31,7 @@ public class HomeActivity extends BaseActivity {
         imgbtn_progress.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intentProgress = new Intent(HomeActivity.this, ProgressActivity.class);
+                Intent intentProgress = new Intent(HomeActivity.this, CameraActivity.class);
                 startActivity(intentProgress);
             }
         });
@@ -56,6 +58,7 @@ public class HomeActivity extends BaseActivity {
 
         setAlarm();
 
+
     }
 
     public void minimizeApp() {
@@ -65,11 +68,19 @@ public class HomeActivity extends BaseActivity {
         startActivity(startMain);
     }
 
-    public void onBackPressed(){
-        minimizeApp();
-        finish();
-    }
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        moveTaskToBack(true);
+                    }
+                }).create().show();
+    }
 
 
     private void setAlarm(){

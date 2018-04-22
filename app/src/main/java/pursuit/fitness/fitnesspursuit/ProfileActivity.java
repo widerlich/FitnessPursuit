@@ -49,9 +49,6 @@ public class ProfileActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 ProfileActivity.super.signOutUser();
-                //FirebaseAuth.getInstance().signOut();
-                //Intent i = new Intent(ProfileActivity.this, MainActivity.class);
-                //startActivity(i);
 
             }
         });
