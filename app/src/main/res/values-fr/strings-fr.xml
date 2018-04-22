@@ -1,2 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <string-array name="day">
+        <item>Lundi</item>
+        <item>Mardi</item>
+        <item>Mercredi</item>
+        <item>Jeudi</item>
+        <item>Vendredi</item>
+        <item>Samedi</item>
+        <item>Dimanche</item>
+    </string-array>
+
+    <string name="title_activity_login">Connection</string>
+    <string name="toast_not_logged_in">Veuillez vous connecter ou créer un nouveau profil.</string>
+
+    <!-- Strings related to login -->
+    <string name="sign_in_cancelled">Vous avez annulé la connection.</string>
+    <string name="successful_sign_in">Bon retour ! Vous êtes prêt à utiliser l\'application.</string>
+    <string name="no_internet_connection">La connection à internet à échouée.</string>
+    <string name="signin_error">"Erreur de connection : </string>
+
+
+    <string name="title_activity_week">WeekActivity</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="Home">Acceuil</string>
+    <string name="Schedule">Emplois du temps</string>
+    <string name="progress">Progression</string>
+    <string name="title_activity_day">DayActivity</string>
+    <string name="Food">Nutrition</string>
+
+    <string name="meal_added">Repas ajouté avec succès !</string>
+    <string name="Profile">Profil</string>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Français</item>
+        <item>Deutsch</item>
+    </string-array>
+
+    <string name="questionnaire_info_general">Nous avons besoin de plus d\'informations pour générer un entrainement.</string>
+    <string name="questionnaire_data_safety">Ne vous inquiétez pas, nous ne vendrons pas ou n\'utiliserons pas ces données pour autre chose. ;)</string>
+    <string name="questionnaire_age">Veuillez entrer votre age:</string>
+    <string name="questionnaire_frequency">Veuillez entrer le nombre de session par semaine :</string>
+    <string name="questionnaire_info_age">ⓘ  Cela va être utilisé pour calculer votre rythme cardiage.</string>
+    <string name="questionnaire_info_frequency">ⓘ Nous recommendons 2 à 3 fois par semaine pour les débutants.</string>
+    <string name="questionnaire_program">Choisissez votre but et votre niveau :</string>
+    <string name="questionnaire_info_goals">ⓘ Plus d\'informations à propos du programme.</string>
+    <string-array name="questionnaire_goals">
+        <item>Gain de force - Débutant</item>
+        <item>Gain de force - Avancée</item>
+        <item>Gain de force - Pro</item>
+        <item>Augmentation de l\'endurance</item>
+        <item>Perte de poids</item>
+    </string-array>
+
+    <string-array name="questionnaire_toasts_goals">
+        <item>Ce programme va se focaliser sur le lever de poids et un entrainement de force avec des poids léger.</item>
+        <item>Ici vous allez vous concentrer sur le lever de poids et un entrainement de force avec des poids intermédiaire.</item>
+        <item>Ce programme se concentre sur le lever de poids lourds.</item>
+        <item>Nous allons nous concentrer sur des exercices d\'endurance comme le vélo ou le jogging.</item>
+        <item>Ceci est un mélange de force et d\'endurance, se concentrant sur la perte de poids.</item>
+    </string-array>
+
+    <string name="title_activity_questionnaire2">QuestionnaireActivity2</string>
+    <string name="food_no_input">Aucune donnée n\'a été entrée.</string>
+    <string name="food_enter_information">Veuillez entrer toutes les informations nécessaires!</string>
+    <string name="food_today">Aujourd\'hui: </string>
+    <string name="food_calorie_graph">Calories ingéré sur les 7 derniers jours :</string>
+    <string name="food_protein_graph">Protéine ingéré sur les 7 derniers jours :</string>
+    <string name="food_carbohydrate_graph">Sucre ingéré sur les 7 derniers jours :</string>
+    <string name="food_fats_graph">Graisse ingéré sur les 7 derniers jours :</string>
+    <string name="food_no_data_graph">Il n\'y a pas de données à afficher.</string>
+
+    <string name="splash_intro">Pour personnaliser votre experience sportive !</string>
+    <string name="food_meal">Repas</string>
+    <string name="food_submit">Soumettre</string>
+    <string name="food_meal_name">Nom du repa</string>
+    <string name="food_fats">Graisse (g)</string>
+    <string name="food_carbohydrates">Sucre (g)</string>
+    <string name="food_protein">Protéine (g)</string>
+    <string name="food_calories">Calories (cal)</string>
+    <string name="profile_name">Nom</string>
+    <string name="profile_language">Langage:</string>
+    <string name="title_activity_questionnaire_fab">Questionnaire</string>
+    <string name="questionnaire_nameinput">Nom</string>
+    <string name="questionnaire_name">Veuillez entrer votre prénom:</string>
+    <string name="questionnaire_preferred_language">Langue :</string>
+    <string name="mealgraph_title">Vue d\'ensemble de votre nutrition</string>
+    <string name="calendar_title">Calendrier de votre activité nutritionnel</string>
+    <string name="meal_log_page">Calendrier des repas</string>
+    <string name="food_log_overview">Vue d\'ensemble journalière</string>
+    <string name="add_meal_button">AJOUTER REPAS</string>
+    <string name="pro_btn">Pro</string>
+    <string name="fat_btn">Graisse</string>
+    <string name="carb_btn">Sucre</string>
+    <string name="cal_btn">Cal</string>
+    <string name="welcome_splash">Bienvenue</string>
+    <string name="your_progress_photos">Vos photos de progression</string>
+    <string name="take_photo">Prendre Photo</string>
+    <string name="user_deleted">Compte de l\'utilisateur supprimé.</string>
+    <string name="sign_out_successful">Déconnection avec succès.</string>
+    <string name="profile">Profil</string>
+    <string name="change_profile_picture">Changer votre photo de profil</string>
+    <string name="log_out_btn">Déconnection</string>
+    <string name="save_btn">Sauvegarder</string>
+
+</resources>
+

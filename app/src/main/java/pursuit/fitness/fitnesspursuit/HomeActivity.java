@@ -1,5 +1,7 @@
 package pursuit.fitness.fitnesspursuit;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -36,7 +38,7 @@ public class HomeActivity extends BaseActivity {
         imgbtn_food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imgbtn_food.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                //imgbtn_food.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                 Intent intentname = new Intent(HomeActivity.this, CalendarActivity.class);
                 startActivity(intentname);
             }
@@ -52,6 +54,7 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
+        setAlarm();
 
     }
 
@@ -66,6 +69,19 @@ public class HomeActivity extends BaseActivity {
         minimizeApp();
         finish();
     }
+
+
+
+    private void setAlarm(){
+
+        Intent intent = new Intent(this, NotificationReceiver.class);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 3000 , pendingIntent);
+    }
+
 }
 
 
