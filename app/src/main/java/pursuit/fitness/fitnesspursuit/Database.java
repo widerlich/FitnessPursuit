@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.Gravity;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,15 +77,16 @@ public class Database {
         Cursor c = database.rawQuery("Select * from foodDiary where meal_date = '" + date + "' ;", null);
         ArrayList<String>theArray = new ArrayList<>();
         if (c.getCount() == 0) {
-        }//Toast.makeText(Database.this,"Empty",Toast.LENGTH_SHORT).show();
+        }
 
         while(c.moveToNext()){
             //if(language == "English")
-            String result = "Meal Name:\t"  + c.getString(1)
-                    +"\nCalories:\t"        + c.getString(2)
-                    +"\nProtein:\t"         + c.getString(3)
-                    +"\nCarbs:\t"           + c.getString(4)
-                    +"\nFats:\t"            + c.getString(5)
+            String result =
+                    "\nMeal Name:  "        + c.getString(1)
+                    +"\nCalories:        "        + c.getString(2)
+                    +"\nProtein:          "         + c.getString(3)
+                    +"\nCarbs:            "           + c.getString(4)
+                    +"\nFats:               "            + c.getString(5)
                     +"\n";
 
             //if(language == "Deutsch")
@@ -119,7 +121,9 @@ public class Database {
                 ,fatTotal=0;
         if (c.getCount() == 0)
         {
-            Toast.makeText(context, R.string.food_no_input,Toast.LENGTH_LONG).show();
+            Toast t = Toast.makeText(context, R.string.food_no_input,Toast.LENGTH_LONG);
+            t.setGravity(Gravity.CENTER_VERTICAL, 0,0);
+            t.show();
 
         }
         while(c.moveToNext()){

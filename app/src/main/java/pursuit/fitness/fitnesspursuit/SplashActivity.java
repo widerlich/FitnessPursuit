@@ -26,7 +26,7 @@ public class SplashActivity extends BaseActivity {
         tv2.startAnimation(splash);
         iv.startAnimation(splash);
 
-        final Intent callMain = new Intent(this, QuestionnaireFabActivity.class);
+        final Intent callMain = new Intent(this, MainActivity.class);
         Thread timer = new Thread() {
             public void run() {
                 try {

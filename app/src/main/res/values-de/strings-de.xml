@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string-array name="day">
+            <item>Montag</item>
+            <item>Dienstag</item>
+            <item>Mittwoch</item>
+            <item>Donnerstag</item>
+            <item>Freitag</item>
+            <item>Samstag</item>
+            <item>Sonntag</item>
+        </string-array>
+
+        <string name="title_activity_login">Anmelden</string>
+        <string name="toast_not_logged_in">Bitte logg dich ein oder erstelle ein Profil.</string>
+
+        <!-- Strings related to login -->
+        <string name="sign_in_cancelled">Du hast das Einloggen abgebrochen.</string>
+        <string name="successful_sign_in">Willkommen zurück! Jetzt kann es losgehen.</string>
+        <string name="no_internet_connection">Keine Internetverbindung.</string>
+        <string name="signin_error">Fehler: </string>
+
+
+        <string name="title_activity_week">WeekActivity</string>
+        <string name="title_activity_schedule">ScheduleActivity</string>
+        <string name="title_activity_day">DayActivity</string>
+        <string name="title_activity_questionnaire2">QuestionnaireActivity2</string>
+
+
+        <string name="Home">Home</string>
+        <string name="Schedule">Trainingsplan</string>
+        <string name="progress">Fortschritt</string>
+        <string name="Food">Ernährungstagebuch</string>
+
+        <string name="meal_added">Mahlzeit erfolgreich hinzugefügt!</string>
+        <string name="Profile">Profil</string>
+        <string-array name="languages">
+            <item>English</item>
+            <item>Français</item>
+            <item>Deutsch</item>
+        </string-array>
+
+        <string name="questionnaire_info_general">Wir brauchen ein paar Informationen, um deinen Trainingsplan zu generieren.</string>
+        <string name="questionnaire_data_safety">Keine Angst, wir nutzen oder speichern diese Daten nirgendwo anders. ;)</string>
+        <string name="questionnaire_age">Wähle dein aktuelles Alter:</string>
+        <string name="questionnaire_frequency">Anzahl der Trainings pro Woche:</string>
+        <string name="questionnaire_info_age">ⓘ  Damit berechnen wir deine Ziel-Herzfrequenz.</string>
+        <string name="questionnaire_info_frequency">ⓘ Für Anfänger empfehlen wir 2-3x pro Woche.</string>
+        <string name="questionnaire_program">Wähle dein Hauptziel:</string>
+        <string name="questionnaire_info_goals">ⓘ Wähle ein Ziel für mehr Informationen.</string>
+        <string-array name="questionnaire_goals">
+            <item>Krafttraining - Anfänger</item>
+            <item>Krafttraining - Fortgeschrittener</item>
+            <item>Krafttraining - Profi</item>
+            <item>Ausdauer erhöhen</item>
+            <item>Abnehmen</item>
+        </string-array>
+
+        <string-array name="questionnaire_toasts_goals">
+            <item>Mit niedrigen Gewichten beginnst du mit Krafttraining.</item>
+            <item>Hier liegt der Fokus auf Krafttraining mit höheren Gewichten.</item>
+            <item>Dieses Programm beinhaltet Krafttraining mit schweren Gewichten.</item>
+            <item>Dieser Plan setzt den Schwerpunkt auf Ausdauertraining wie Joggen oder Radfahren.</item>
+            <item>Hier liegt der Fokus auf Gewichtverlust durch einen Mix aus Kraft- und Ausdauertraining.</item>
+        </string-array>
+
+        <string name="food_no_input">Hier wurde noch nichts gespeichert.</string>
+        <string name="food_enter_information">Bitte befülle jedes Feld!</string>
+        <string name="food_today">Heute: </string>
+        <string name="food_calorie_graph">Kalorien während der letzten 7 Tage:</string>
+        <string name="food_protein_graph">Protein während der letzten 7 Tage:</string>
+        <string name="food_carbohydrate_graph">Kohlenhydrate während der letzten 7 Tage:</string>
+        <string name="food_fats_graph">Fett während der letzten 7 Tage:</string>
+        <string name="food_no_data_graph">Keine Daten zur Darstellung verfügbar.</string>
+
+        <string name="welcome_splash">Willkommen</string>
+        <string name="splash_intro">zu deiner personalisierten Fitnesserfahrung!</string>
+        <string name="food_meal">Mahlzeit</string>
+        <string name="food_submit">Speichern</string>
+        <string name="food_meal_name">Name</string>
+        <string name="food_fats">Fett (g)</string>
+        <string name="food_carbohydrates">Kohlenhydrate (g)</string>
+        <string name="food_protein">Protein (g)</string>
+        <string name="food_calories">Kalorien (cal)</string>
+        <string name="profile_name">Name</string>
+        <string name="profile_language">Sprache:</string>
+        <string name="title_activity_questionnaire_fab">Fragebogen</string>
+        <string name="questionnaire_nameinput">Name</string>
+        <string name="questionnaire_name">Wie heißt du?</string>
+        <string name="questionnaire_preferred_language">Bevorzugte Sprache:</string>
+        <string name="mealgraph_title">Ernährungs-Überblick</string>
+        <string name="calendar_title">Kalender</string>
+        <string name="meal_log_page">Ernährungstagebuch</string>
+        <string name="food_log_overview">Tagesübersicht</string>
+        <string name="add_meal_button">MAHLZEIT HINZUFÜGEN</string>
+        <string name="pro_btn">Pro</string>
+        <string name="fat_btn">Fet</string>
+        <string name="carb_btn">Koh</string>
+        <string name="cal_btn">Kal</string>
+
+        <string name="your_progress_photos">Deine Fortschritts-Bilder</string>
+        <string name="take_photo">Foto Aufnehmen</string>
+        <string name="user_deleted">Dein Konto wurde gelöscht.</string>
+        <string name="sign_out_successful">Du bist jetzt ausgeloggt.</string>
+        <string name="profile">Profil</string>
+        <string name="change_profile_picture">Profilbild ändern</string>
+        <string name="log_out_btn">Ausloggen</string>
+        <string name="save_btn">Speichern</string>
+
+</resources>

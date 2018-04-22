@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Gravity;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
@@ -19,6 +20,7 @@ public class MealGraph extends AppCompatActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_graph);
+        setTitle(getString(R.string.mealgraph_title));
 
         TextView t = (TextView)findViewById(R.id.overview);
         t.setMovementMethod(new ScrollingMovementMethod());
@@ -32,7 +34,6 @@ public class MealGraph extends AppCompatActivity {
 
         if(day.getDay() >7) {
             nutrition = db.getNutritionGraph(day, selection);
-            Toast.makeText(this,"More",Toast.LENGTH_LONG).show();
         }
         else if(day.getDay() <7) {
             String p = 30+"/"+(day.getMonth()-1)+"/"+day.getYear();
@@ -57,10 +58,13 @@ public class MealGraph extends AppCompatActivity {
             LineGraphSeries<DataPoint> series = new LineGraphSeries<>(getDataPoint(nutrition));
             doColors(series);
             graph.addSeries(series);
-            t.setText(graph.getTitle() + getNutrition(nutrition,dateArray));
+            t.setText(getNutrition(nutrition,dateArray));
         }
-        else
-            Toast.makeText(this, R.string.food_no_data_graph, Toast.LENGTH_SHORT).show();
+        else {
+            Toast toa = Toast.makeText(this, R.string.food_no_data_graph, Toast.LENGTH_SHORT);
+            toa.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toa.show();
+        }
     }
 
 
@@ -341,15 +345,14 @@ public class MealGraph extends AppCompatActivity {
 
 
     // text beneath graph
-
     private String getNutrition(ArrayList<Double> nutrition,String []dateArray) {
-        String output = getString(R.string.food_today) + String.valueOf(nutrition.get(6))
-                + "\n" + dateArray[5] + ":\t" + String.valueOf(nutrition.get(5))
-                + "\n" + dateArray[4] + ":\t" + String.valueOf(nutrition.get(4))
-                + "\n" + dateArray[3] + ":\t" + String.valueOf(nutrition.get(3))
-                + "\n" + dateArray[2] + ":\t" + String.valueOf(nutrition.get(2))
-                + "\n" + dateArray[1] + ":\t" + String.valueOf(nutrition.get(1))
-                + "\n" + dateArray[0] + ":\t" + String.valueOf(nutrition.get(0));
+        String output = getString(R.string.food_today) + " " + String.valueOf(nutrition.get(6))
+                + "\n" + dateArray[5] + ":     " + String.valueOf(nutrition.get(5))
+                + "\n" + dateArray[4] + ":     " + String.valueOf(nutrition.get(4))
+                + "\n" + dateArray[3] + ":     " + String.valueOf(nutrition.get(3))
+                + "\n" + dateArray[2] + ":     " + String.valueOf(nutrition.get(2))
+                + "\n" + dateArray[1] + ":     " + String.valueOf(nutrition.get(1))
+                + "\n" + dateArray[0] + ":     " + String.valueOf(nutrition.get(0));
         return output;
     }
 }

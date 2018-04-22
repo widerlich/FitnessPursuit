@@ -23,15 +23,14 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
-        user = checkUser();
+        onClickSignIn();
         if(user!=null)
             userid = user.getUid();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        onClickSignIn();
+    protected void onResume(Bundle savedInstanceState){
+        intent1 = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(intent1);
     }
 
     private static final int RC_SIGN_IN = 123;
@@ -43,7 +42,7 @@ public class MainActivity extends BaseActivity {
     //private FirebaseAuth auth;
     public void onClickSignIn() {
         if (user != null) {
-            showPopupMessage(getString(R.string.successful_sign_in)+" onClick");
+            showPopupMessage(getString(R.string.successful_sign_in));
             intent1 = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent1);
 
@@ -59,10 +58,11 @@ public class MainActivity extends BaseActivity {
         }
         else {
             List<AuthUI.IdpConfig> providers = Arrays.asList(
-                    new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build());
-// Create and launch sign -in intent
-            startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(),
-                    RC_SIGN_IN
+                    new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
+                    new AuthUI.IdpConfig.GoogleBuilder().build());
+            // Create and launch sign -in intent
+            startActivityForResult(AuthUI       .getInstance().createSignInIntentBuilder()
+                                                .setAvailableProviders(providers).build(), RC_SIGN_IN
             );
         }
     }
@@ -70,16 +70,17 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == RC_SIGN_IN) {
             IdpResponse response = IdpResponse.fromResultIntent(data);
+
             if (resultCode == RESULT_OK) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 showPopupMessage(getString(R.string.successful_sign_in));
                 intent1 = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent1);
-                        //+ "displayName=" + user.getDisplayName() + ", " +
-                        //"email=" + user.getEmail() + ", " + "uuid=" + user.getUid());
             }
+
             else {
                 if (response == null) {
                     showPopupMessage(getString(R.string.sign_in_cancelled));

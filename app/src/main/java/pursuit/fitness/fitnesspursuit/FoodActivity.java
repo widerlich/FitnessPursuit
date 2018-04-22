@@ -17,6 +17,7 @@ public class FoodActivity extends BaseActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
+        setTitle(getString(R.string.meal_log_page));
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
         submitButton = (Button)findViewById(R.id.submit_Button);
         submitButton.setOnClickListener(insertFood);
@@ -27,11 +28,11 @@ public class FoodActivity extends BaseActivity {
     private View.OnClickListener insertFood = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            EditText meal_Name = (EditText)findViewById(R.id.meal_Name);
-            EditText Calorie_count = (EditText)findViewById(R.id.Calorie_Count);
-            EditText Protein_Count = (EditText)findViewById(R.id.Protein_Count);
-            EditText Carb_Count = (EditText)findViewById(R.id.Carb_Count);
-            EditText Fat_count = (EditText)findViewById(R.id.Fat_Count);
+            EditText meal_Name = (EditText)findViewById(R.id.meal_name);
+            EditText Calorie_count = (EditText)findViewById(R.id.calories);
+            EditText Protein_Count = (EditText)findViewById(R.id.protein);
+            EditText Carb_Count = (EditText)findViewById(R.id.carbs);
+            EditText Fat_count = (EditText)findViewById(R.id.fat);
             if(meal_Name.getText().toString().equals("") || Calorie_count.getText().toString().equals("") || Protein_Count.getText().toString().equals("")|| Carb_Count.getText().toString().equals("")|| Fat_count.getText().toString().equals("")){
                 Toast.makeText(FoodActivity.this, R.string.food_enter_information, Toast.LENGTH_SHORT).show();
             }

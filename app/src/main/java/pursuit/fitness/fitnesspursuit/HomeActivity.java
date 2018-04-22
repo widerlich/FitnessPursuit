@@ -14,7 +14,6 @@ public class HomeActivity extends BaseActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
 
-
         ImageButton imgbtn_schedule = (ImageButton) findViewById(R.id.imgbtn_schedule);
         imgbtn_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,10 +32,11 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
-        ImageButton imgbtn_friends = (ImageButton) findViewById(R.id.imgbtn_food);
-        imgbtn_friends.setOnClickListener(new View.OnClickListener() {
+        final ImageButton imgbtn_food = (ImageButton) findViewById(R.id.imgbtn_food);
+        imgbtn_food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                imgbtn_food.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                 Intent intentname = new Intent(HomeActivity.this, CalendarActivity.class);
                 startActivity(intentname);
             }
@@ -52,6 +52,19 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
+
+    }
+
+    public void minimizeApp() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
+    }
+
+    public void onBackPressed(){
+        minimizeApp();
+        finish();
     }
 }
 

@@ -27,6 +27,7 @@ public class CheckFoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(getString(R.string.food_log_overview));
         setContentView(R.layout.activity_check_food);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -44,11 +45,11 @@ public class CheckFoodActivity extends AppCompatActivity {
         ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,FoodDiary);
         list.setAdapter(listAdapter);
         ArrayList<Double>FoodTotal = db.getTotal(selectedDate);
-        totalFood.setText("Food Log Overview"+
-                "\n Total calorie intake (cal):\t"+FoodTotal.get(0)+
-                "\n Total protein intake (g):\t"+ FoodTotal.get(1)+
-                "\n Total carbohydrate intake (g):\t"+ FoodTotal.get(2)+
-                "\n Total fat intake (g):\t\t"+ FoodTotal.get(3));
+        totalFood.setText(
+                "\n Total calorie intake (cal):          "+FoodTotal.get(0)+
+                "\n Total protein intake (g):             "+ FoodTotal.get(1)+
+                "\n Total carbohydrate intake (g):  "+ FoodTotal.get(2)+
+                "\n Total fat intake (g):                     "+ FoodTotal.get(3));
 
        /* //if(language == "Deutsch")
         totalFood.setText("Tagesübersicht"+

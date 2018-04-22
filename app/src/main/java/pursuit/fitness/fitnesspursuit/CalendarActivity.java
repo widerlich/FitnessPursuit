@@ -23,6 +23,7 @@ public class CalendarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+        setTitle(getString(R.string.calendar_title));
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         calTotal = (Button) findViewById(R.id.calorie_count_button);
         proTotal = (Button) findViewById(R.id.protein_count_button);
@@ -43,10 +44,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         calendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-                // DateFormat dateFormat = SimpleDateFormat.getDateInstance();
-                //Toast.makeText(calendarView.this," "+dateFormat.format(date.getDate()),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(CalendarActivity.this, CheckFoodActivity.class);
-                //Intent i = new Intent(calendarView.this,Test.class);
                 CalendarDay todayDate = (CalendarDay) calendarView.getSelectedDate();
                 String selectedDate = todayDate.getDay() + "/" + todayDate.getMonth() + "/" + todayDate.getYear();
                 intent.putExtra("selectedDate", todayDate);
@@ -99,7 +97,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         if (requestCode == 1) {
             if (resultCode == Activity.RESULT_OK) {
-                Toast.makeText(this, getString(R.string.meal_added), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.meal_added), Toast.LENGTH_SHORT).show();
             }
         }
     }
