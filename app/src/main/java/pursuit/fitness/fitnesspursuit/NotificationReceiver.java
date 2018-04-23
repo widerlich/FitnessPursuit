@@ -26,8 +26,8 @@ public class NotificationReceiver extends BroadcastReceiver{
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.fitnesspursuit_launcher_icon)
-                        .setContentTitle("Reminder")
-                        .setContentText("Dont forget to log your meals for today!")
+                        .setContentTitle(context.getString(R.string.reminder))
+                        .setContentText(context.getString(R.string.notification_text))
                         .setContentIntent(contentIntent);
         mBuilder.setContentIntent(contentIntent);
         mBuilder.setDefaults(Notification.DEFAULT_SOUND);

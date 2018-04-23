@@ -74,17 +74,18 @@
 
     <Button
         android:id="@+id/btn_delete"
+        style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/transparent"
-        android:textStyle="normal"
         android:text="Delete your user account."
         android:textAlignment="center"
         android:textSize="14sp"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toBottomOf="@+id/txt_language" />
+        app:layout_constraintTop_toBottomOf="@+id/spin_language" />
 
     <Button
         android:id="@+id/btn_logout"

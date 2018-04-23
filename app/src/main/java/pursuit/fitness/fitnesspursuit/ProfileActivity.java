@@ -1,5 +1,7 @@
 package pursuit.fitness.fitnesspursuit;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -52,6 +54,24 @@ public class ProfileActivity extends BaseActivity {
 
             }
         });
+
+        Button btn_delete = (Button) findViewById(R.id.btn_delete);
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+
+                  @Override
+                  public void onClick(View v) {
+                      new AlertDialog.Builder(ProfileActivity.this)
+                              .setTitle(R.string.delete_account)
+                              .setMessage(R.string.sure_about_deletion)
+                              .setNegativeButton(android.R.string.no, null)
+                              .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                                  public void onClick(DialogInterface arg0, int arg1) {
+                                      ProfileActivity.super.deleteUser();
+                                  }
+                              }).create().show();
+                  }
+              });
 
         Spinner spinnerLang = (Spinner) findViewById(R.id.spin_language);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

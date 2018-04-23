@@ -31,7 +31,7 @@ public class HomeActivity extends BaseActivity {
         imgbtn_progress.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intentProgress = new Intent(HomeActivity.this, CameraActivity.class);
+                Intent intentProgress = new Intent(HomeActivity.this, QuestionnaireFabActivity.class);
                 startActivity(intentProgress);
             }
         });

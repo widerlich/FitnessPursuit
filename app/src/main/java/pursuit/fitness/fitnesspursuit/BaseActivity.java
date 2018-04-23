@@ -48,6 +48,8 @@ abstract class BaseActivity extends AppCompatActivity {
                         showPopupMessage(getString(R.string.user_deleted));
                     }
                 });
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
         //TODO
         //SQLite Delete Row Statement
         //DELETE

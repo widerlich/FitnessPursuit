@@ -1,5 +1,7 @@
 package pursuit.fitness.fitnesspursuit;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,21 +23,39 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
     int age;
     int frequency;
     String selectedGoal;
+    private static Context appContext;
+
+    public static Context getContext()
+    {
+        return appContext;
+    }
+
+
     Spinner spinnerLang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionnaire_fab);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        appContext = this;
+        final String[] selections = appContext.getResources().getStringArray(R.array.questionnaire_toasts_goals);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Successful submission", Snackbar.LENGTH_SHORT)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, R.string.successful_submission, Snackbar.LENGTH_SHORT)
+                        .setAction(R.string.undo, new View.OnClickListener(){
+                            @Override public void onClick(View view){
+                                Intent intent1 = new Intent(QuestionnaireFabActivity.this, QuestionnaireFabActivity.class);
+                                startActivity(intent1);
+                            }
+                        }).show();
+                Intent intent = new Intent(QuestionnaireFabActivity.this, HomeActivity.class);
+                startActivity(intent);
                 }
         });
 
@@ -77,10 +97,10 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedGoal = (String) parent.getItemAtPosition(position);
-
+                String currenttoast = selections[position];
                 // Notify the selected item text
                 Toast.makeText
-                        (getApplicationContext(), "Selected : " + selectedGoal, Toast.LENGTH_SHORT)
+                        (getApplicationContext(), currenttoast, Toast.LENGTH_SHORT)
                         .show();
             }
 
