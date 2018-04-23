@@ -3,6 +3,7 @@ package pursuit.fitness.fitnesspursuit;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -56,7 +57,9 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
-        setAlarm();
+        Context appContext = this;
+        NotificationReceiver noti = new NotificationReceiver();
+        noti.showNotification(appContext);
 
 
     }
@@ -71,8 +74,8 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setTitle("Really Exit?")
-                .setMessage("Are you sure you want to exit?")
+                .setTitle(R.string.really_exit)
+                .setMessage(R.string.sure_about_exit)
                 .setNegativeButton(android.R.string.no, null)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 

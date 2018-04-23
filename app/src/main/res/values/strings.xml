@@ -11,6 +11,21 @@
         <item>Sunday</item>
     </string-array>
 
+    <string-array name="exercice">
+        <item>HIIT</item>
+        <item>Split workout legs</item>
+        <item>Full body strength workout</item>
+        <item>High intensity cardio session</item>
+    </string-array>
+
+    <string-array name="exercice2">
+        <item>Split workout chest and shoulders</item>
+        <item>Split workout legs</item>
+        <item>Full body strength workout</item>
+    </string-array>
+
+
+
     <string name="title_activity_login">Sign in</string>
     <string name="toast_not_logged_in">Please log in or create a profile.</string>
 
@@ -25,7 +40,7 @@
     <string name="title_activity_schedule">ScheduleActivity</string>
     <string name="Home">Home</string>
     <string name="Schedule">Schedule</string>
-    <string name="progress">Progress</string>
+    <string name="progress">Questionnaire</string>
     <string name="title_activity_day">DayActivity</string>
     <string name="Food">Food Log</string>
 
@@ -36,6 +51,7 @@
         <item>Français</item>
         <item>Deutsch</item>
     </string-array>
+
 
     <string name="questionnaire_info_general">We need some more info to generate your training plan.</string>
     <string name="questionnaire_data_safety">Don\'t worry, we will not sell this data or use it elsewhere. ;)</string>
@@ -109,5 +125,7 @@
     <string name="notification_text">Don\'t forget to log your meals for today!</string>
     <string name="successful_submission">Successful submission</string>
     <string name="undo">Undo</string>
+    <string name="really_exit">Really Exit?</string>
+    <string name="sure_about_exit">Are you sure you want to exit?</string>
 
 </resources>

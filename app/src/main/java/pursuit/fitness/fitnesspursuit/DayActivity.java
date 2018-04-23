@@ -1,20 +1,15 @@
 package pursuit.fitness.fitnesspursuit;
 
-import android.app.ListActivity;
 import android.content.pm.ActivityInfo;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.ArrayList;
 
 
-
-public class DayActivity extends ListActivity {
+public class DayActivity extends BaseActivity {
 
     public static final String EXTRA_DAY_ID = "fitnesspursuit.Drink";
     private String TAG = "DayActivity";
@@ -26,7 +21,6 @@ public class DayActivity extends ListActivity {
 
     private ListView mListView;
 
-    //TODO: change populate ListView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -36,28 +30,27 @@ public class DayActivity extends ListActivity {
 
         mDatabaseHelper = new DatabaseHelper(this);
 
-        int dayId = (Integer) getIntent().getExtras().get(EXTRA_DAY_ID);
-        Log.d(TAG, "dayId=" + dayId);
+       // int dayId = (Integer) getIntent().getExtras().get(EXTRA_DAY_ID);
+       // Log.d(TAG, "dayId=" + dayId);
 
-        populateListView();
-
-        setUpUI();
+      // populateListView();
 
 
- /*       openAndQueryDatabase();
-                                    DOESSNNNNNNNNNNNN'T WORK
+
+      /*openAndQueryDatabase();
+
         displayResultList();*/
 
 
     }
 
-    private void populateListView() {
+   /* private void populateListView() {
 
 
         Log.d(TAG, "populateListView: Displaying data in the ListView.");
 
         //get the data and append to a list
-        Cursor data = mDatabaseHelper.getItemExerciceList();
+        Cursor data = mDatabaseHelper.getData();
         ArrayList<String> listData = new ArrayList<>();
         while (data.moveToNext()) {
             //get the value from the database in column 1
@@ -65,36 +58,7 @@ public class DayActivity extends ListActivity {
             listData.add(data.getString(1));
 
         }
-    }
-
-    private void setUpUI() {
-
-        ListView lvExercices = findViewById(R.id.listExercices);
-
-      /*  AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
-                // handle click
-
-                Intent intent = new Intent(DayActivity.this, Exercices.class);
-                startActivity(intent);
-
-            }
-        };
-        lvExercices.setOnItemClickListener(onItemClickListener);
-        */
-    }
-
-
-
-
-
-
-
-
-
-
-
+    }*/
 
 
 
@@ -106,22 +70,23 @@ public class DayActivity extends ListActivity {
                 "of the results are displayed");
         getListView().addHeaderView(tView);
 
-       // ListView list = (ListView)findViewById(android.R.id.list);
+        ListView list = (ListView)findViewById(android.R.id.list);
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, results));
         getListView().setTextFilterEnabled(true);
 
     }
     private void openAndQueryDatabase() {
+
+        SQLiteDatabase newDB = dbHelper.getWritableDatabase();
         try {
             DatabaseHelper dbHelper = new DatabaseHelper(this.getApplicationContext());
-            newDB = dbHelper.getWritableDatabase();
 
-            Cursor a = newDB.rawQuery("SELECT goal FROM " + user + "WHERE userid = " + iduser , null);
 
-            Cursor c = newDB.rawQuery("SELECT ex_name, weight, time FROM " +
-                    exercices +
-                    " WHERE goal = " + a, null);
+        //    Cursor a = newDB.rawQuery("SELECT goal FROM " + user + "WHERE userid = " + iduser , null);
+
+            Cursor c = newDB.rawQuery("SELECT ex_name, weight, time FROM " + exercices +"", null);
+
 
             if (c != null ) {
                 if (c.moveToFirst()) {
@@ -141,8 +106,5 @@ public class DayActivity extends ListActivity {
             newDB.close();
         }
 
-    }
-*/
-
-
+    }*/
 }

@@ -29,7 +29,7 @@
 
         <string name="Home">Home</string>
         <string name="Schedule">Trainingsplan</string>
-        <string name="progress">Fortschritt</string>
+        <string name="progress">Fragebogen</string>
         <string name="Food">Ernährungstagebuch</string>
 
         <string name="meal_added">Mahlzeit erfolgreich hinzugefügt!</string>
@@ -106,5 +106,14 @@
         <string name="change_profile_picture">Profilbild ändern</string>
         <string name="log_out_btn">Ausloggen</string>
         <string name="save_btn">Speichern</string>
+    <string name="progress_menubar">Fortschrittsbilder</string>
+    <string name="delete_account">Konto löschen?</string>
+    <string name="sure_about_deletion">Willst du dein Konto wirklich löschen?</string>
+    <string name="reminder">Erinnerung</string>
+    <string name="notification_text">Vergiss nicht, deine Mahlzeiten zu loggen!</string>
+    <string name="successful_submission">Erfolgreich übermittelt</string>
+    <string name="undo">Rückgängig</string>
+    <string name="really_exit">Wirklich ausloggen?</string>
+    <string name="sure_about_exit">Willst du dich wirklich ausloggen?</string>
 
 </resources>

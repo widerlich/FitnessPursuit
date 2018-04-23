@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -28,6 +27,8 @@ public class ProfileActivity extends BaseActivity {
 
 
     DatabaseHelper db;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseUser user = auth.getCurrentUser();
 
     private static int RESULT_LOAD_IMAGE = 1;
 
@@ -97,6 +98,7 @@ public class ProfileActivity extends BaseActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedLang = (String) parent.getItemAtPosition(position);
                 //Set Language preference in DATABASE!
+
             }
 
             @Override
@@ -141,8 +143,10 @@ public class ProfileActivity extends BaseActivity {
     protected void ChangeName (){
 
 
+
         TextView Tvprofile = findViewById(R.id.txt_profile);
-        Tvprofile.setText((CharSequence) db.getName());
+        //Tvprofile.setText((CharSequence) db.getName());
+        Tvprofile.setText(user.getDisplayName());
 
     }
 

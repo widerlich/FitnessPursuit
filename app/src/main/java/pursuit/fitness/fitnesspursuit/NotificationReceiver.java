@@ -18,7 +18,7 @@ public class NotificationReceiver extends BroadcastReceiver{
         showNotification(context);
     }
 
-    private void showNotification(Context context) {
+    public void showNotification(Context context) {
         Intent myIntent = new Intent(context, CalendarActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0,
                 myIntent, FLAG_ONE_SHOT);

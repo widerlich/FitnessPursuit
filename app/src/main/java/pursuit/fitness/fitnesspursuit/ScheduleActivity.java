@@ -1,19 +1,13 @@
 package pursuit.fitness.fitnesspursuit;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.Resources;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
-public class ScheduleActivity extends ListActivity {
+public class ScheduleActivity extends BaseActivity {
 
     DatabaseHelper mDatabaseHelper;
     private String TAG = "ScheduleActivity";
@@ -22,7 +16,7 @@ public class ScheduleActivity extends ListActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-        populateListView();
+        //populateListView();
         setUpUI();
     }
 
@@ -37,7 +31,7 @@ public class ScheduleActivity extends ListActivity {
                 // handle click
 
                 Intent intent = new Intent(ScheduleActivity.this, DayActivity.class);
-                intent.putExtra(DayActivity.EXTRA_DAY_ID, (int) id);
+               // intent.putExtra(DayActivity.EXTRA_DAY_ID, (int) id);
                 startActivity(intent);
 
             }
@@ -46,7 +40,7 @@ public class ScheduleActivity extends ListActivity {
     }
 
 
-    private void populateListView() {
+    /*private void populateListView() {
 
 
         Log.d(TAG, "populateListView: Displaying data in the ListView.");
@@ -60,6 +54,6 @@ public class ScheduleActivity extends ListActivity {
             listData.add(data.getString(1));
 
         }
-    }
+    }*/
 
 }

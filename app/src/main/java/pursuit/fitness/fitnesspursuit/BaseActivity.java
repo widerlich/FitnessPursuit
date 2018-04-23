@@ -50,13 +50,6 @@ abstract class BaseActivity extends AppCompatActivity {
                 });
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        //TODO
-        //SQLite Delete Row Statement
-        //DELETE
-        //FROM
-        // table
-        //WHERE
-        //search_condition;
         signOutUser();
     }
 

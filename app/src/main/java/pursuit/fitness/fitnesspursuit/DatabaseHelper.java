@@ -84,6 +84,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         database.execSQL("CREATE TABLE IF NOT EXISTS foodDiary(meal_id INTEGER PRIMARY KEY AUTOINCREMENT,meal_name VARCHAR,calorie_count DOUBLE,protein_count DOUBLE,carb_count DOUBLE,fat_count DOUBLE,meal_date VARCHAR);");
 
+        database.execSQL("CREATE TABLE IF NOT EXISTS user_table(userid TEXT PRIMARY KEY, age INT,goal TEXT, language TEXT, nameUser TEXT, frequency INT);");
+
     }
 
     // Method is called during an upgrade of the database,
@@ -100,7 +102,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + CREATE_TABLE_EXERCICE;
+        String exercice_table = TABLE_EXERCICE;
+        String query = "SELECT * FROM " + exercice_table;
         Cursor data = db.rawQuery(query, null);
         return data;
     }

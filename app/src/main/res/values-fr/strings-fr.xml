@@ -25,7 +25,7 @@
     <string name="title_activity_schedule">ScheduleActivity</string>
     <string name="Home">Acceuil</string>
     <string name="Schedule">Emplois du temps</string>
-    <string name="progress">Progression</string>
+    <string name="progress">Questionnaire</string>
     <string name="title_activity_day">DayActivity</string>
     <string name="Food">Nutrition</string>
 
@@ -40,9 +40,9 @@
     <string name="questionnaire_info_general">Nous avons besoin de plus d\'informations pour générer un entrainement.</string>
     <string name="questionnaire_data_safety">Ne vous inquiétez pas, nous ne vendrons pas ou n\'utiliserons pas ces données pour autre chose. ;)</string>
     <string name="questionnaire_age">Veuillez entrer votre age:</string>
-    <string name="questionnaire_frequency">Veuillez entrer le nombre de session par semaine :</string>
+    <string name="questionnaire_frequency">Session par semaine :</string>
     <string name="questionnaire_info_age">ⓘ  Cela va être utilisé pour calculer votre rythme cardiage.</string>
-    <string name="questionnaire_info_frequency">ⓘ Nous recommendons 2 à 3 fois par semaine pour les débutants.</string>
+    <string name="questionnaire_info_frequency">ⓘ 2 à 3 fois par semaine pour les débutants.</string>
     <string name="questionnaire_program">Choisissez votre but et votre niveau :</string>
     <string name="questionnaire_info_goals">ⓘ Plus d\'informations à propos du programme.</string>
     <string-array name="questionnaire_goals">
@@ -83,7 +83,7 @@
     <string name="profile_language">Langage:</string>
     <string name="title_activity_questionnaire_fab">Questionnaire</string>
     <string name="questionnaire_nameinput">Nom</string>
-    <string name="questionnaire_name">Veuillez entrer votre prénom:</string>
+    <string name="questionnaire_name">Prénom:</string>
     <string name="questionnaire_preferred_language">Langue :</string>
     <string name="mealgraph_title">Vue d\'ensemble de votre nutrition</string>
     <string name="calendar_title">Calendrier de votre activité nutritionnel</string>
@@ -103,6 +103,15 @@
     <string name="change_profile_picture">Changer votre photo de profil</string>
     <string name="log_out_btn">Déconnection</string>
     <string name="save_btn">Sauvegarder</string>
+    <string name="progress_menubar">Photo de votre progression</string>
+    <string name="delete_account">Supprimer compte ?</string>
+    <string name="sure_about_deletion">Etes-vous sûr de supprimer votre comptet?</string>
+    <string name="reminder">Rappel</string>
+    <string name="notification_text">N\'oubliez pas de remplir votre repas d\'aujourd\'hui !</string>
+    <string name="successful_submission">Questionnaire remplit avec succès</string>
+    <string name="undo">Annuler</string>
+    <string name="really_exit">Vraiment quitter ?</string>
+    <string name="sure_about_exit">Etes-vous sûr de vouloir quitter ?</string>
 
 </resources>
 

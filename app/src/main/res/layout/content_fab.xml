@@ -5,20 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/viewA"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="40dp">
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="60dp">
 
                 <android.support.constraint.Guideline
                     android:id="@+id/guideline"
@@ -54,13 +46,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/questionnaire_name"
-                    android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/nameInput"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toTopOf="@+id/nameInput" />
@@ -86,9 +78,9 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="32dp"
                     android:text="@string/questionnaire_preferred_language"
-                    android:textStyle="bold"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
@@ -149,8 +141,8 @@
                     android:id="@+id/frequency"
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
-                    android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="60dp"
                     android:text="@string/questionnaire_frequency"
                     android:textColor="@android:color/black"
@@ -195,8 +187,8 @@
                     android:layout_marginTop="40dp"
                     android:text="@string/questionnaire_program"
                     android:textColor="@android:color/black"
-                    android:textStyle="bold"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/info_frequency" />
 
@@ -204,20 +196,14 @@
                     android:id="@+id/spinner_goal"
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
-                    android:layout_marginStart="3dp"
                     android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
                     android:layout_marginTop="10dp"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toBottomOf="@+id/goal" />
 
 
             </android.support.constraint.ConstraintLayout>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-
 
 
 </android.support.design.widget.CoordinatorLayout>
