@@ -142,7 +142,6 @@ public class ProfileActivity extends BaseActivity {
 
 
         TextView Tvprofile = findViewById(R.id.txt_profile);
-
         Tvprofile.setText((CharSequence) db.getName());
 
     }

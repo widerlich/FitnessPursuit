@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,8 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_USER_2 = "goal";
     private static final String COL_USER_3 = "language";
     private static final String COL_USER_4 = "nameUser";
-    private static final String COL_USER_5 = "profilepicture";
-    private static final String COL_USER_6 = "frequency";
+    private static final String COL_USER_5 = "frequency";
 
     private static final String COL_EXERICE_0 = "id";
     private static final String COL_EXERICE_1 = "name";
@@ -43,9 +43,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // private static final String DATABASE_CREATE_FREQUENCY = ("CREATE TABLE IF NOT EXISTS frequency(frequency INT, day VARCHAR);");
 
     private static final String CREATE_TABLE_USER = "CREATE TABLE "
-            + TABLE_USER + "(" + COL_USER_0 + " INTEGER PRIMARY KEY," + COL_USER_1
+            + TABLE_USER + "(" + COL_USER_0 + " TEXT PRIMARY KEY," + COL_USER_1
             + " INTEGER," + COL_USER_2 + " TEXT," + COL_USER_3 + " TEXT," + COL_USER_4
-            + " TEXT," + COL_USER_5 + " INTEGER," + COL_USER_6 + " INTEGER)";
+            + " TEXT," + COL_USER_5 + " INTEGER)";
 
     private static final String CREATE_TABLE_EXERCICE = "CREATE TABLE "
             + TABLE_EXERCICE + "(" + COL_EXERICE_0 + " INTEGER PRIMARY KEY," + COL_EXERICE_1
@@ -150,7 +150,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String userid = user.getUid();
 
-        String query0 = "SELECT" + COL_USER_6 + " FROM" + CREATE_TABLE_USER +
+        String query0 = "SELECT" + COL_USER_5 + " FROM" + CREATE_TABLE_USER +
                 " WHERE " + COL_USER_0 + " ='" + userid + "'";
         Cursor frequency = db.rawQuery(query0, null);
 
@@ -175,15 +175,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addUser (age) {
+    public void addUser (FirebaseUser user_id, int age, String goal, String language, EditText nameUser, int frequency) {
+
 
         SQLiteDatabase db = this.getWritableDatabase();
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        FirebaseUser user = auth.getCurrentUser();
 
-        String userid = user.getUid();
-
-        db.execSQL("INSERT INTO user_table (userid, age, goal, language, nameUser, profilepicture, frequency) VALUES ();");
+        db.execSQL("INSERT INTO " + CREATE_TABLE_USER + "(" + COL_USER_0 + "," + COL_USER_1 + "," + COL_USER_2 + "," + COL_USER_3 + ","
+                + COL_USER_4 + "," + COL_USER_5 + ")  VALUES(" + user_id +
+                "," + age + "," + goal + "," + language + "," + nameUser + ","  + frequency + ")");
 
     }
 

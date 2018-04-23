@@ -16,6 +16,11 @@ import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import static java.sql.Types.NULL;
+
 public class QuestionnaireFabActivity extends AppCompatActivity {
     NumberPicker pickerAge;
     NumberPicker pickerFrequency;
@@ -35,6 +40,8 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
     }
 
     DatabaseHelper db;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseUser userid = auth.getCurrentUser();
     Spinner spinnerLang;
 
     @Override
@@ -53,8 +60,7 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                db.addUser(userid,   );
-               // (userid, age, goal, language, nameUser, profilepicture, frequency)
+                db.addUser(userid, age, selectedGoal, selectedLang, edtname, frequency);
 
                 Snackbar.make(view, R.string.successful_submission, Snackbar.LENGTH_SHORT)
                         .setAction(R.string.undo, new View.OnClickListener(){

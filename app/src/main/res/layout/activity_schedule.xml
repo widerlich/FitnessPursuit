@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="26dp"
-        android:entries="@array/day"
-        />
+        tools:layout_editor_absoluteY="26dp"/>
+       <!-- android:entries="@array/day" -->
+
 
 </android.support.constraint.ConstraintLayout>
