@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -22,7 +23,10 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
     Button b1;
     int age;
     int frequency;
+    String name;
+    String selectedLang;
     String selectedGoal;
+    EditText edtname;
     private static Context appContext;
 
     public static Context getContext()
@@ -30,7 +34,7 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
         return appContext;
     }
 
-
+    DatabaseHelper db;
     Spinner spinnerLang;
 
     @Override
@@ -47,6 +51,11 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                db.addUser(userid,   );
+               // (userid, age, goal, language, nameUser, profilepicture, frequency)
+
                 Snackbar.make(view, R.string.successful_submission, Snackbar.LENGTH_SHORT)
                         .setAction(R.string.undo, new View.OnClickListener(){
                             @Override public void onClick(View view){
@@ -60,6 +69,10 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
         });
 
 
+        edtname = findViewById(R.id.nameInput);
+        name = QuestionnaireFabActivity.this.edtname.getText().toString();
+
+
         pickerAge = (NumberPicker)findViewById(R.id.numberPickerAge);
         pickerAge.setMinValue(10);
         pickerAge.setMaxValue(60);
@@ -70,6 +83,7 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 age = newVal;
+
             }
         });
 
@@ -96,7 +110,7 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
         spinnerGoal.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedGoal = (String) parent.getItemAtPosition(position);
+                selectedGoal = (String) parent.getItemAtPosition(position);
                 String currenttoast = selections[position];
                 // Notify the selected item text
                 Toast.makeText
@@ -120,7 +134,7 @@ public class QuestionnaireFabActivity extends AppCompatActivity {
         spinnerLang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLang = (String) parent.getItemAtPosition(position);
+                selectedLang = (String) parent.getItemAtPosition(position);
                 //Set Language preference in DATABASE!
             }
 

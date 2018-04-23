@@ -10,7 +10,6 @@ import android.widget.ListView;
 
 public class ScheduleActivity extends BaseActivity {
 
-    public static String USER;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -20,12 +19,9 @@ public class ScheduleActivity extends BaseActivity {
     }
 
     private void setUpUI() {
-        Resources res = getResources();
-        //        String[] days = res.getStringArray(R.array.day);
-        String[] days = getResources().getStringArray(R.array.day);
 
         ListView lvDays = findViewById(R.id.listDays);
-        //  ListView listView = day;
+
         AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
@@ -40,9 +36,6 @@ public class ScheduleActivity extends BaseActivity {
         lvDays.setOnItemClickListener(onItemClickListener);
     }
 
-    private void goToActivity(Class clazz) {
-        Intent intent = new Intent(ScheduleActivity.this, clazz);
-        startActivity(intent);
-    }
+
 
 }

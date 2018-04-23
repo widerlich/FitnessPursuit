@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -16,10 +17,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.FileNotFoundException;
 
 public class ProfileActivity extends BaseActivity {
+
+
+    DatabaseHelper db;
 
     private static int RESULT_LOAD_IMAGE = 1;
 
@@ -29,6 +37,8 @@ public class ProfileActivity extends BaseActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_profile);
         setTitle(getString(R.string.profile));
+        ChangeName();
+
 
 
         Button btn_picture = (Button) findViewById(R.id.btn_picture);
@@ -65,8 +75,10 @@ public class ProfileActivity extends BaseActivity {
                               .setMessage(R.string.sure_about_deletion)
                               .setNegativeButton(android.R.string.no, null)
                               .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
                                   public void onClick(DialogInterface arg0, int arg1) {
+
+                                      db.deleteCurrentUser();
+
                                       ProfileActivity.super.deleteUser();
                                   }
                               }).create().show();
@@ -125,4 +137,14 @@ public class ProfileActivity extends BaseActivity {
 
 
     }
+
+    protected void ChangeName (){
+
+
+        TextView Tvprofile = findViewById(R.id.txt_profile);
+
+        Tvprofile.setText((CharSequence) db.getName());
+
+    }
+
 }
